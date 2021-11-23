@@ -3,16 +3,16 @@ title = "Juice"
 sort_by = "weight"
 +++
 
-# EditoresLand 
+# EditoresLand
 
-**EditoresLand** es una guía para editores de texto intuitiva, gratisy y opensource. 
+**EditoresLand** es una guía para editores de texto intuitiva, gratisy y opensource.
 
-- Diferentes Editores 
-- Simple y fácil de entender 
-- Ejemplos de configuraciones 
-- Trucos e Ideas 
+- Diferentes Editores
+- Simple y fácil de entender
+- Ejemplos de configuraciones
+- Trucos e Ideas
 
-# Contribuciones :p 
+# Contribuciones :p
 
 Nosotros apreciamos mucho por querer ayudar a este proyecto la intención es importante!
 
