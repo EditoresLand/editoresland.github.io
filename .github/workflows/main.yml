@@ -1,4 +1,4 @@
-name: MdFormat y Deploy
+name: Deploy Zola 
   
 on: push
   
