@@ -1,0 +1,19 @@
+# The URL the site will be built for
+base_url = "/"
+compile_sass = true
+build_search_index = true
+
+theme = "juice"
+
+[markdown]
+highlight_code = true
+highlight_theme = "inspired-github"
+
+[extra]
+juice_logo_name = "EditoresLand"
+juice_logo_path = "juice.svg"
+juice_extra_menu = [
+    { title = "Github", link = "https://github.com/EditoresLand" },
+		{ title = "Book", link = "https://editoresland.github.io/book" }
+]
+repository_url = "https://github.com/EditoresLand/book" 
