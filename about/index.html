@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre Nosotros |  </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #3498db;
+        /* Primary theme text color */
+        --primary-text-color: #212121;
+        /* Primary theme link color */
+        --primary-link-color: #2980b9;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #2980b9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/juice.css">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="&#x2F;">
+    <div class="logo">
+        <img src="/juice.svg" alt="logo">
+        EditoresLand
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="&#x2F;about&#x2F;">Sobre Nosotros</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;EditoresLand">Github</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;editoresland.github.io&#x2F;book">Book</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="/about/#editoresland">EditoresLand</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="/about/#logo">Logo</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="/about/#herramientas">Herramientas ?</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text">Sobre Nosotros</div>
+<h1 id="editoresland">EditoresLand</h1>
+<p><strong>EditoresLand</strong> es un conjunto de guías y documentación en español sobre tus editores de texto favoritos su propósito es difundir y agrandar la documentación en la comunidad hispana sobre cada uno de los editores de texto una herramienta principal en el desarrollo del software</p>
+<h1 id="logo">Logo</h1>
+<p><img src="/juice.svg" alt="" /></p>
+<h1 id="herramientas">Herramientas ?</h1>
+<p>Nos hemos apoyado de varias herramientas las cuales son:</p>
+<ul>
+<li><a href="https://www.getzola.org">Zola</a> Un generador de sitios estáticos para la página principal</li>
+<li><a href="https://github.com/rust-lang/mdBook/">MdBook</a> Un generador sitios estáticos usado en el libro principal creado por <code>RustLang</code></li>
+<li><a href="https://pages.github.com/">Github Pages</a> El hosting para todas las páginas web de EditoresLand</li>
+<li><a href="https://github.com/executablebooks/mdformat">MdFormat</a> El formatter y linter para las páginas markdown</li>
+<li><a href="https://editorconfig.org/">EditorConfig</a> Para estilizar y mantener un estilo en los documentos usamos EditorConfig para usar solo tabs o spaces</li>
+</ul>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+		Made by <a href="https://huhu.io">Huhu.io</a> <b>Juice Theme</b>
+        </small>
+    </footer>
+    
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #3498db;
+        /* Primary theme text color */
+        --primary-text-color: #212121;
+        /* Primary theme link color */
+        --primary-link-color: #2980b9;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #2980b9;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/juice.css">
+    
+    
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="&#x2F;">
+    <div class="logo">
+        <img src="/juice.svg" alt="logo">
+        EditoresLand
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="&#x2F;changelog&#x2F;">Changelog</a>
+    
+    <a class="nav-item subtitle-text" href="&#x2F;about&#x2F;">Sobre Nosotros</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;EditoresLand">Github</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;editoresland.github.io&#x2F;book">Book</a>
+        
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <section class="text-center">
+            <h1 class="heading-text" style="font-size: 50px">
+		    Documentación y Guías para Editores de Texto :)
+            </h1>
+            <h3 class="title-text">
+                <b>EditoresLand</b> es un conjunto de guías y documentación en español sobre tus editores de texto favoritos 
+            </h3>
+            <div>
+                <a class="github-button" href="https://github.com/EditoresLand/book" data-size="large" data-show-count="true"
+                   aria-label="Star EditoresLand/book on GitHub">Star</a>
+                <a class="github-button" href="https://github.com/EditoresLand/book/fork" data-size="large"
+                   data-show-count="true" aria-label="Fork EditoresLand/book on GitHub">Fork</a>
+            </div>
+        </section>
+        <img class="hero-image" style="width: 50%" src="/juice.svg">
+
+        <div class="explore-more text"
+            onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+		Explorar más!
+        </div>
+        <style>
+            .hero section {
+                padding: 0 5rem;
+            }
+            @media screen and (max-width: 768px) {
+                .hero section {
+                    padding: 0 2rem;
+                }
+
+                .hero-image {
+                    display: none
+                }
+            }
+        </style>
+        
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="/#editoresland">EditoresLand</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="/#contribuciones-p">Contribuciones :p</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+            <div id="features" class="heading-text">Overview</div>
+            <h1 id="editoresland">EditoresLand</h1>
+<p><strong>EditoresLand</strong> es una guía para editores de texto intuitiva, gratisy y opensource.</p>
+<ul>
+<li>Diferentes Editores</li>
+<li>Simple y fácil de entender</li>
+<li>Ejemplos de configuraciones</li>
+<li>Trucos e Ideas</li>
+</ul>
+<h1 id="contribuciones-p">Contribuciones :p</h1>
+<p>Nosotros apreciamos mucho por querer ayudar a este proyecto la intención es importante!</p>
+<p>Cualquier tipo de contribución es aceptada:</p>
+<ul>
+<li>Issues (Creación de caracterísiticas, Reporte de bugs, Preguntas, ideas, ...)</li>
+<li>Pull requests (creación de nuevas secciones, CI integration, características nuevas, ...)</li>
+</ul>
+
+            
+        </div>
+
+        
+        
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+		Made by <a href="https://huhu.io">Huhu.io</a> <b>Juice Theme</b>
+        </small>
+    </footer>
+    
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>
