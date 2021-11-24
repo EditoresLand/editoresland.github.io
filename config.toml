@@ -11,7 +11,7 @@ highlight_theme = "inspired-github"
 
 [extra]
 juice_logo_name = "EditoresLand"
-juice_logo_path = "juice.svg"
+juice_logo_path = "editores.png"
 juice_extra_menu = [
     { title = "Github", link = "https://github.com/EditoresLand" },
 		{ title = "Book", link = "https://editoresland.github.io/book" }
